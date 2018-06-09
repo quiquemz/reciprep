@@ -19,19 +19,18 @@ admin.initializeApp({
 
 /************** Routes **************/
 app.get('/', function(req, res) {
-  var idToken = '';
-  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer '))
+  let idToken = '';
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
     idToken = req.headers.authorization.split('Bearer ')[1];
+  }
 
   admin.auth().verifyIdToken(idToken)
     .then(function(decodedToken) {
-      var uid = decodedToken.uid;
       res.send('Login Successful');
     }).catch(function(error) {
       res.redirect('/home');
       res.send('Login Failed');
     });
-
 });
 
 app.get('/home', (req, res) => res.sendfile('static/main_index.html'));
@@ -55,7 +54,7 @@ app.get('/recipe/:recipeId', (req, res) => res.sendfile('static/recipe.html'));
 /************** Server **************/
 app.use(express.static('static'));
 
-server.listen(3000, 'localhost');
+server.listen(3001, 'localhost');
 server.on('listening', () => {
   console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 });
