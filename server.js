@@ -1,13 +1,12 @@
 'use strict';
 
 const express = require('express');
-const http = require('http');
 const path = require('path');
 const admin = require('firebase-admin');
 // import * as admin from 'firebase-admin';
 
 const app = express();
-const server = http.createServer(app);
+const port = process.env.PORT || 3001;
 
 /********** Firebase Admin SDK Setup **********/
 var serviceAccount = require('./getreciprep-7d245d0f1049.json');
@@ -53,8 +52,6 @@ app.get('/recipe/:recipeId', (req, res) => res.sendfile('static/recipe.html'));
 
 /************** Server **************/
 app.use(express.static('static'));
-
-server.listen(3001, 'localhost');
-server.on('listening', () => {
-  console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-});
+app.listen(port, () => {
+  console.log('Our app is running on http://localhost:' + port);
+})
