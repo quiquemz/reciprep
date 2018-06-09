@@ -1,0 +1,125 @@
+hr {
+  margin: 20px 0 0 0;
+}
+
+.breakfast-recipe .name:hover, .lunch-recipe .name:hover, .dinner-recipe .name:hover {
+  cursor: pointer;
+  font-weight: 1000;
+}
+
+.week-slider .prev-week-btn {
+  text-align: left;
+  color: #363046;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.week-slider .week-name {
+  text-align: center;
+}
+
+.week-slider .next-week-btn {
+  text-align: right;
+  color: #363046;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.week-description {
+  font-weight: 100;
+  font-size: 0.76em;
+  color: #AAA;
+}
+
+.week-description .week-start-day {
+  margin: 0 5px 0 auto;
+}
+
+.week-description .week-end-day {
+  margin: 0 auto 0 5px;
+}
+
+.week-days {
+  margin: 12px 4px;
+}
+
+.week-days .day-btn {
+  border-radius: 50%;
+  background: #EEE;
+  width: 34px;
+  height: 34px;
+  font-size: 0.8em;
+  line-height: 34px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.week-days .active {
+  color: white;
+  background: #363046;
+}
+
+.week-days .day-btn:hover {
+  color: white;
+  background: #363046;
+}
+
+.active-day {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.day-meal .header {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.day-meal ul {
+  box-shadow: #EFEFEF 0 0 4px;
+  margin-bottom: 20px;
+}
+
+.day-meal ul li {
+  font-size: 0.7em;
+  font-weight: 300;
+  color: #1C1217;
+  display: block;
+}
+
+.day-meal .name {
+  float: left;
+}
+
+.day-meal .action {
+  float: right;
+  color: #363046;
+}
+
+.modal-body {
+  padding: 0.8rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.favorite-modal-list li {
+  position: relative;
+  display: block;
+  padding: .64rem .8rem;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px;
+}
+
+#load-more {
+  list-style-type: none;
+  font-family: SFPro-Semibold;
+  text-align: center;
+  border-width: 0px;
+  color: #7E5A9B;
+}

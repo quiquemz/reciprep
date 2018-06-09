@@ -1,0 +1,35 @@
+#header {
+  height: 68px;
+  min-width: 100%;
+  background: #FDFDFD;
+  color: #363046;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#header .header-btn {
+  padding: 8px;
+  font-size: 1.2em;
+}
+
+#header .left-header-btn {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-size: 1.2em;
+}
+
+#header .right-header-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 1.2em;
+  border-radius: 50%;
+  border: solid 1px rgba(54, 48, 70, 1);
+  /* box-shadow: #ADADAD 0px 0px 2px; */
+  padding: 6px;
+}

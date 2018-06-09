@@ -1,0 +1,73 @@
+<html !DOCTYPE>
+
+  <head>
+    <title>ReciPrep</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Contrail+One|Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom Common CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main_index.css">
+    <!-- Custom Specific CSS -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <div id="brand">
+      RECIPREP
+    </div>
+
+    <div id="main-homepage" class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row ">
+        <div class="col-md-12 d-flex justify-content-center ">
+          <span id="app-info">Discovering new recipes and planning your meals has never been easier!</span>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-12 d-flex justify-content-center ">
+          <button id="login-btn" class="btn btn-primary-new ">Login</button>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-12 d-flex justify-content-center ">
+          <button id="signup-btn" class="btn btn-default">Create an Account</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js "></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js "></script>
+    <!-- Firebase configuration -->
+    <script type="text/javascript" src="js/initFirebase.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript">
+      $('#login-btn').on('click', () => window.location.href = '/login');
+      $('#signup-btn').on('click', () => window.location.href = '/signup');
+    </script>
+  </body>
+
+</html>

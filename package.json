@@ -1,0 +1,23 @@
+{
+  "name": "reciprep",
+  "version": "1.0.0",
+  "description": "Run the following commands for rapid development",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "firebase-admin": "^5.12.1",
+    "http": "0.0.0",
+    "path": "^0.12.7"
+  }
+}

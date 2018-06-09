@@ -1,0 +1,3 @@
+function Groceries() {
+  this.weeks = {};
+}

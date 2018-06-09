@@ -1,0 +1,190 @@
+<!--
+  Author: Saul Mendez, Akanksha Kevalramani, Adam Abadilla
+  Description: Markup for the discovery page. 
+-->
+
+<html !DOCTYPE>
+
+  <head>
+    <title>ReciPrep</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Contrail+One|Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+    <!-- Custom Common CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <!-- Custom Specific CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <!-- Header -->
+      <nav id="header">
+        <div class="r-btn header-btn left-header-btn open-sidebar-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div id="brand">
+          <h3>RECIPREP</h3>
+        </div>
+        <div class="r-btn header-btn right-header-btn restore-recipe-btn">
+          <!-- Added dynamically in header.js -->
+        </div>
+      </nav>
+
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="r-btn close-sidebar-btn">
+          <i class="fa fa-times"></i>
+        </div>
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <div id="brand">
+            <h3>RECIPREP</h3>
+          </div>
+        </div>
+
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled">
+          <li class="active"><a href="#">Discover</a></li>
+          <li><a href="/calendar">Calendar</a></li>
+          <li><a href="/grocerylist">Grocery List</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <ul class="list-unstyled">
+            <li id="login-btn">
+              <a href="login">Login</a>
+            </li>
+            <li id="signup-btn">
+              <a href="signup">Sign Up</a>
+            </li>
+            <li id="logout-btn">
+              <a href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+
+        <!-- Modal -->
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Add to Calendar</h3>
+                <button type="button" class="close close-calendar-modal-btn" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <span class="modal-sub-title">Add a date</span> <br />
+                <div style="overflow:hidden;">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8">
+                        <div id="datetimepicker12"></div>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+                  </div>
+                </div><br />
+
+                <span class="modal-sub-title">Choose a meal</span> <br />
+                <div style="overflow:hidden;">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <center>
+                          <div id="meals-tab" class="btn-group btn-group-justified" data-toggle="buttons">
+                            <a href="#prices" class="btn btn-default btn-sm active" data-toggle="tab">
+                              <input type="radio" />Breakfast
+                            </a>
+                            <a href="#features" class="btn btn-default btn-sm" data-toggle="tab">
+                              <input type="radio" />Lunch
+                            </a>
+                            <a href="#requests" class="btn btn-default btn-sm" data-toggle="tab">
+                              <input type="radio" />Dinner
+                            </a>
+                          </div>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="save-to-calendar-btn" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-container">
+          <div class="r-cards-container">
+            <!-- Dynamically adding cards from API-->
+          </div>
+          <div>
+            <div class="footer">
+
+              <div class="r-btn footer-btn next-btn">
+                <i class="fa fa-times"></i>
+              </div>
+              <div class="r-btn footer-btn calendar-btn">
+                <i class="fa fa-calendar-alt"></i>
+              </div>
+              <div class="r-btn footer-btn favorites-btn">
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="overlay"></div>
+
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+    <!-- Firebase configuration and management -->
+    <script type="text/javascript" src="js/initFirebase.js"></script>
+
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/sidebar.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,134 @@
+#content .r-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#content .r-cards-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+#content .r-card {
+  position: absolute;
+  height: 100%;
+  max-width: 520px;
+  margin: auto;
+  color: #FFF;
+  border-radius: 8px;
+  background: url('../images/recipe2.jpg') center no-repeat, linear-gradient(rgba(255, 255, 255, 0) 65%, #888);
+  background-blend-mode: multiply;
+  background-size: auto 100%;
+  transition: all 0.5s;
+}
+
+#content .r-card-in {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#content .r-card-out-left {
+  /* from right to left */
+  left: -300%;
+}
+
+#content .r-card-out-top {
+  /* from bottom to up */
+  top: -300%;
+}
+
+#content .r-card-out-right {
+  /* from left to right */
+  right: -300%;
+}
+
+#content .r-card .r-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#content .r-card .r-card-main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 1.2em;
+}
+
+#content .r-card .r-card-secondary-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px;
+  font-size: 0.6em;
+}
+
+#content .r-card .r-card-time {
+  display: flex;
+}
+
+#content .r-card .r-card-time .clock-icon {
+  margin: 2px 4px 0 0;
+}
+
+#content .footer {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 526px;
+  margin: 30px auto;
+}
+
+#content .footer-btn {
+  border-radius: 50%;
+  border: solid 1px #DDD;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  padding-top: 14px;
+  margin: 0 auto;
+}
+
+#content .footer-btn .fa-times {
+  color: #EB5757;
+}
+
+#content .footer-btn .fa-calendar-alt {
+  color: #6FCCDF;
+}
+
+#content .footer-btn .fa-star {
+  color: #F4BD46;
+}
+
+#meals-tab input {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+}
+
+#meals-tab .btn {
+  background-color: #FFF !important;
+  color: #363046 !important;
+  box-shadow: none;
+  border: 1px solid #E3E3E3;
+}
+
+#meals-tab .active {
+  background-color: #363046 !important;
+  color: #fff !important;
+}
+
+.bootstrap-datetimepicker-widget table td {
+  padding: 8px;
+}
+
+.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #363046;
+}

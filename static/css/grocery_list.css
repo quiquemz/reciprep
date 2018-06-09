@@ -1,0 +1,36 @@
+.week-slider .prev-week-btn {
+  text-align: left;
+  color: #363046;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.week-slider .week-name {
+  text-align: center;
+}
+
+.week-slider .next-week-btn {
+  text-align: right;
+  color: #363046;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.week-description {
+  font-weight: 100;
+  font-size: 0.76em;
+  color: #AAA;
+  margin-bottom: 20px;
+}
+
+.week-description .week-start-day {
+  margin: 0 5px 0 auto;
+}
+
+.week-description .week-end-day {
+  margin: 0 auto 0 5px;
+}
+
+.grocery-list {
+  margin: 20px 0 40px 0;
+}

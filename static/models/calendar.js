@@ -1,0 +1,3 @@
+function Calendar() {
+  this.weeks = {};
+}

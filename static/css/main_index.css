@@ -1,0 +1,38 @@
+#brand {
+	font-size: 4em;
+	margin-top: 24%;
+}
+
+#app-info {
+	font-size: 1.1em;
+	text-align: center;
+	max-width: 80%;
+	margin-bottom: 32px;
+}
+
+.btn-default, .btn-default:hover {
+	background-color: #FFF !important;
+	color: #363046 !important;
+	box-shadow: none !important;
+	border: 1px solid #E3E3E3;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	width: 70vw;
+}
+
+.btn-primary-new, .btn-primary-new:hover {
+	background-color: #363046 !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	width: 70vw;
+}
+
+.container {
+	padding-top: 100px;
+}
+
+body {
+	text-align: center;
+}

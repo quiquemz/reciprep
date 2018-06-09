@@ -1,0 +1,196 @@
+<html !DOCTYPE>
+
+  <head>
+    <title>ReciPrep</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Contrail+One|Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom General CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <!-- Custom Specific CSS -->
+    <link rel="stylesheet" href="css/calendar.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <!-- Header -->
+      <nav id="header">
+        <div class="r-btn header-btn left-header-btn open-sidebar-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div id="brand">
+          <h5 class="page-title">Calendar</h5>
+        </div>
+        <div class="r-btn header-btn right-header-btn add-recipe-btn">
+          <!-- Added dynamically in header.js -->
+        </div>
+      </nav>
+
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="r-btn close-sidebar-btn">
+          <i class="fa fa-times"></i>
+        </div>
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <div id="brand">
+            <h3>RECIPREP</h3>
+          </div>
+        </div>
+
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled">
+          <li><a href="/discover">Discover</a></li>
+          <li class="active"><a href="/calendar">Calendar</a></li>
+          <li><a href="/grocerylist">Grocery List</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <ul class="list-unstyled">
+            <li id="login-btn">
+              <a href="login">Login</a>
+            </li>
+            <li id="signup-btn">
+              <a href="signup">Sign Up</a>
+            </li>
+            <li id="logout-btn">
+              <a href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+
+        <div class="container">
+
+          <!-- Modal -->
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="myModalLabel">Add a favorite recipe</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-group favorite-modal-list" id="myModalList">
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <a href="/discover"><button id="calendar-discover-more" type="button" class="btn btn-primary">Discover More Recipes</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row week-slider">
+            <div class="col prev-week-btn">
+              <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="col-6 week-name">
+            </div>
+            <div class="col next-week-btn">
+              <i class="fa fa-angle-right"></i>
+            </div>
+          </div>
+
+          <div class="row week-description">
+            <div class="week-start-day">
+              <!-- Dynamically set -->
+            </div>
+            <span class="dash"> - </span>
+            <div class="week-end-day">
+              <!-- Dynamically set -->
+            </div>
+          </div>
+
+          <div class="row week-days">
+            <div id="Monday" class="r-btn day-btn">M</div>
+            <div id="Tuesday" class="r-btn day-btn">T</div>
+            <div id="Wednesday" class="r-btn day-btn">W</div>
+            <div id="Thursday" class="r-btn day-btn">T</div>
+            <div id="Friday" class="r-btn day-btn">F</div>
+            <div id="Saturday" class="r-btn day-btn">S</div>
+            <div id="Sunday" class="r-btn day-btn">S</div>
+          </div>
+
+          <hr>
+
+          <div class="active-day"></div>
+
+          <div class="day-meal">
+            <ul class="list-group list-breakfast">
+              <li class="list-group-item header">
+                <div class="name">
+                  Breakfast
+                </div>
+                <div class="r-btn add-breakfast-btn action">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </li>
+            </ul>
+            <ul class="list-group list-lunch">
+              <li class="list-group-item header">
+                <div class="name">
+                  Lunch
+                </div>
+                <div class="r-btn add-lunch-btn action">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </li>
+            </ul>
+            <ul class="list-group list-dinner">
+              <li class="list-group-item header">
+                <div class="name">
+                  Dinner
+                </div>
+                <div class="r-btn add-dinner-btn action">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Overlay -->
+      <div class="overlay"></div>
+      <!-- jQuery CDN -->
+      <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <!-- Bootstrap Js CDN -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+      <!-- Firebase configuration and management -->
+      <script type="text/javascript" src="js/initFirebase.js"></script>
+      <script type="text/javascript" src="js/header.js"></script>
+      <script type="text/javascript" src="js/sidebar.js"></script>
+      <script type="text/javascript" src="js/calendar.js"></script>
+
+  </body>
+
+</html>

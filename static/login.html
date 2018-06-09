@@ -1,0 +1,84 @@
+<html !DOCTYPE>
+
+  <head>
+    <title>ReciPrep</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Contrail+One|Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom Common CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <!-- Custom Specific CSS -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+      <!-- Header -->
+      <nav id="header">
+        <div class="r-btn header-btn left-header-btn">
+          <!-- Added dynamically in header.js -->
+        </div>
+        <div id="brand">
+          <h5 class="page-title">Login</h5>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+        <div class="container">
+          <form id="email-login-form">
+            <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input id="email" name="email" type="email" class="form-control">
+              <label for="email">Email</label>
+            </div>
+
+            <!-- Material input password -->
+            <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input id="password" type="password" name="password" class="form-control">
+              <label for="password">Password</label>
+            </div>
+
+            <div class="text-center mt-4" >
+              <button class="btn btn-primary" type="submit" style="margin-top: 32px;">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+    <!-- Firebase configuration -->
+    <script type="text/javascript" src="js/initFirebase.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+
+  </body>
+
+</html>
