@@ -9,6 +9,8 @@ $ npm install -g babel-node
 $ npm install
 ```
 
+Request keys
+
 Run ```gulp``` to start developing:
 
   * ExpressJS server will run at http://localhost:3000
