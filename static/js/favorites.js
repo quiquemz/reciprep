@@ -35,7 +35,7 @@ $(document).ready(function() {
             loadRecipe(recipeId);
           }
         }
-        else 
+        else
           $('.favorites-empty-state').show();
       });
     }
@@ -50,7 +50,8 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'json',
       headers: {
-        'X-Mashape-Key': 'fE0JDoXOrQmshCwRo1DwJRH2XhXKp1YnYEAjsnBx1IKReJz2Bv'
+        "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+        "x-rapidapi-key": "THeQXDKUAjmshA5IuXWyvEBwQgBKp1F428ejsnvIwlO566vwoN"
       },
       success: (data) => {
         createRecipeListItem(data);

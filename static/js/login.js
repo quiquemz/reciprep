@@ -15,7 +15,7 @@ $(document).ready(function() {
   function login(e) {
     e.preventDefault();
 
-    const username = $('#username').val()
+    const username = $('#username').val();
     const email = $('#email').val();
     const password = $('#password').val();
 
