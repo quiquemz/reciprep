@@ -7,6 +7,7 @@ with the spoonacular API to pull in a continuous stream of random recipes for th
 swipe through. There is a modal to allow users to directly add a recipe to their calendar.
 ***/
 
+
 $(document).ready(() => {
   /*** Global and Constant Variables ***/
   const WEEK_DESCRIPTION = 'D MMM'; // Formats to display moment
@@ -211,7 +212,8 @@ $(document).ready(() => {
         type: 'GET',
         dataType: 'json',
         headers: {
-          'X-Mashape-Key': 'fE0JDoXOrQmshCwRo1DwJRH2XhXKp1YnYEAjsnBx1IKReJz2Bv'
+          "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+	        "x-rapidapi-key": "THeQXDKUAjmshA5IuXWyvEBwQgBKp1F428ejsnvIwlO566vwoN"
         },
         success: (data) => {
           data.recipes.forEach(recipe => {
@@ -279,7 +281,8 @@ $(document).ready(() => {
         type: 'GET',
         dataType: 'json',
         headers: {
-          'X-Mashape-Key': 'fE0JDoXOrQmshCwRo1DwJRH2XhXKp1YnYEAjsnBx1IKReJz2Bv'
+          "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+	        "x-rapidapi-key": "THeQXDKUAjmshA5IuXWyvEBwQgBKp1F428ejsnvIwlO566vwoN"
         },
         success: (recipe) => {
           const ingredients = [];

@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     auth.createUserWithEmailAndPassword(email, password)
       .then(res => {
-        firebase.auth().onAuthStateChanged(function(user) {
+        firebase.auth().onAuthStateChanged((user) => {
           if (user) {
             const uid = res.user.uid;
             writeUserDataDB(uid, email);
